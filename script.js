@@ -123,5 +123,5 @@ const trackEmployeeData = function () {
   displayEmployees(employees);
 };
 
-// Add event listener to 'Add Employees' button
+// Add event listener to 'Add Employees' button.
 addEmployeesBtn.addEventListener("click", trackEmployeeData);
