@@ -2,25 +2,29 @@
 const addEmployeesBtn = document.querySelector("#add-employees-btn");
 
 // Collect employee data
+// initiate empty employee array
 const listEmployees = [];
 const collectEmployees = function () {
-  // TODO: Get user input to create and return an array of employee objects
+  // while loop starting condition
   let addEmployee = true;
+  // while loop to get and save input from user in variables
   while (addEmployee) {
     const efirstName = prompt("Please enter the first name:");
     const elastName = prompt("Please enter the last name:");
     let eSalary = parseInt(prompt("Enter the salary:"));
+    // condition for the salary value. Must be a number type or its replaced by 0
     if (isNaN(eSalary)) {
       eSalary = 0;
     }
-
+    // making an object for the current employee
     const employeeObject = {
       firstName: efirstName,
       lastName: elastName,
       salary: eSalary,
     };
-
+    // adding the employee object to the array
     listEmployees.push(employeeObject);
+    // finish condition of the while loop. User confirms or deny.
     addEmployee = confirm("Do you want to add another employee?");
   }
   return listEmployees;
@@ -28,18 +32,32 @@ const collectEmployees = function () {
 
 // Display the average salary
 const displayAverageSalary = function (employeesArray) {
-  // TODO: Calculate and display the average salary
+  // iniate the total salary
   let sumSalary = 0;
+  // loop through all emplyees adding their salary to the total
   for (let i = 0; i < employeesArray.length; i++) {
     sumSalary = sumSalary + employeesArray[i].salary;
   }
-
-  return sumSalary / employeesArray.length;
+  // calculate and log the average salary to the console
+  const avgSalary = sumSalary / employeesArray.length;
+  console.log(
+    `The average salary between our ${employeesArray.length} employees is ${avgSalary}$`
+  );
 };
 
 // Select a random employee
 const getRandomEmployee = function (employeesArray) {
-  // TODO: Select and display a random employee
+  // setting max and min values to generate a random integer index
+  const minRandom = 0;
+  const maxRandom = listEmployees.length - 1;
+  // generate a random number in the interval
+  const randomInteger = Math.floor(
+    Math.random() * (maxRandom - minRandom + 1) + minRandom
+  );
+  // logging the full name of a random employee to the console
+  console.log(
+    `Congratulations to ${listEmployees[randomInteger].firstName} ${listEmployees[randomInteger].lastName}, our random drawing winner!`
+  );
 };
 
 /*
