@@ -18,7 +18,7 @@ To use the app, click on the "Add Employee" button. A series of prompt will appe
 
 To see the average salary and the name of a random employee; open the Chrome DevTool by right clicking the webpage and selecting "Inspect". Click on "console" in the new tab that appears.
 
-The deployed website can be visited at:
+The deployed website can be visited at: https://aladintork.github.io/Employee-Payroll-Tracker/
 
 ## Credits
 
